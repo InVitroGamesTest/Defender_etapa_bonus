@@ -26,6 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>//vibrate = false;
+//MOVEMENT LOGIC
+
+MovementType = irandom_range(0,2); //solo 0 y 1; linear,dinamico.
+SideMoveSpeed = vspeed;
+//random_range(0.5,4);
+
+lifeTime = 0;
+HorizontalDirection = 0;
+screenX = window_get_width();
+screenX = screenX/2;
+
+if(x &gt; screenX){HorizontalDirection = -1;}
+if(x &lt; screenX){HorizontalDirection = 1;}
+
+///////////////////////////////////////////
 
 if (global.wave == 1) {
 //Set speed
@@ -69,6 +84,7 @@ randomize();
 vspeed = choose(0.7, 2, 1.1);
 }
 
+SideMoveSpeed = vspeed;
 </string>
           </argument>
         </arguments>
@@ -93,6 +109,16 @@ vspeed = choose(0.7, 2, 1.1);
             <kind>1</kind>
             <string>// Enemy Collides with the player
 //if((place_meeting(x,y,obj_player)) &amp;&amp; vibrate == false){
+
+lifeTime += global.deltaSeconds;
+
+if(MovementType == 1){
+HorizontalSpeed = (SideMoveSpeed^lifeTime - lifeTime * 0.5) * HorizontalDirection;
+hspeed = HorizontalSpeed;
+}
+if(x &gt;= obj_killerRight.x){instance_destroy();}
+if(x &lt;= obj_killerLeft.x){instance_destroy();}
+
 if(place_meeting(x,y,obj_player)){
     health -= 10;
     instance_destroy();

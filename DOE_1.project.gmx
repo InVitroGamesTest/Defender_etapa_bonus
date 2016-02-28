@@ -45,6 +45,9 @@
     <object>objects\obj_energy_bar</object>
     <object>objects\obj_shield</object>
     <object>objects\obj_boss_bullet</object>
+    <object>objects\obj_global</object>
+    <object>objects\obj_killerLeft</object>
+    <object>objects\obj_killerRight</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_defender</room>
