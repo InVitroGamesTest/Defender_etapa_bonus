@@ -28,9 +28,14 @@
             <string>//vibrate = false;
 //MOVEMENT LOGIC
 
-MovementType = irandom_range(0,2); //solo 0 y 1; linear,dinamico.
-SideMoveSpeed = vspeed;
-//random_range(0.5,4);
+MovementType = irandom_range(0,3); 
+
+//solo 0, 1 y 2; 
+//vertical, 
+//vertical+horizontal, 
+//zigzag.
+
+SideMoveSpeed = random_range(0.5,5);
 
 lifeTime = 0;
 HorizontalDirection = 0;
@@ -39,6 +44,21 @@ screenX = screenX/2;
 
 if(x &gt; screenX){HorizontalDirection = -1;}
 if(x &lt; screenX){HorizontalDirection = 1;}
+
+// zig-zag vars
+///////////////////////////////////////////
+horizontalRange = 100; //rango en pixeles.
+
+hDirection = 1;
+
+
+
+minX = x - (horizontalRange/2);
+maxX = x + (horizontalRange/2);
+
+show_debug_message(minX);
+show_debug_message(maxX);
+show_debug_message("///////////////////////////////////");
 
 ///////////////////////////////////////////
 
@@ -112,10 +132,20 @@ SideMoveSpeed = vspeed;
 
 lifeTime += global.deltaSeconds;
 
-if(MovementType == 1){
-HorizontalSpeed = (SideMoveSpeed^lifeTime - lifeTime * 0.5) * HorizontalDirection;
-hspeed = HorizontalSpeed;
+if(MovementType == 1)
+{
+    HorizontalSpeed = (SideMoveSpeed^lifeTime - lifeTime * 0.5) * HorizontalDirection;
+    hspeed = HorizontalSpeed;
 }
+
+if(MovementType == 2)
+{
+    if(x &lt; minX){hDirection = 1;}
+    if(x &gt; maxX){hDirection = -1;}
+    
+    hspeed = (SideMoveSpeed * hDirection);
+}
+
 if(x &gt;= obj_killerRight.x){instance_destroy();}
 if(x &lt;= obj_killerLeft.x){instance_destroy();}
 
