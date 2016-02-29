@@ -25,9 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spawn_rate = 55;
+            <string>alarm[0] = 50
 
-alarm[0] = spawn_rate;
 </string>
           </argument>
         </arguments>
@@ -50,15 +49,28 @@ alarm[0] = spawn_rate;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Random X values
-randomize();
-//randX = floor(random(room_width));
-randX = floor(random_range(133, 379));
-//create enemy
-//instance_create(randX, room_height+40, o_enemy);
-instance_create(randX, 4, o_enemy);
-//call it again
-alarm[0] = spawn_rate;
+            <string>if (global.wave == 1 || global.wave == 4 || global.wave == 6 || global.wave == 7 || global.wave == 8 || global.wave == 9) {
+    // Random X values
+    randomize()
+    //randX = floor(random(room_width));
+    randX = floor(random_range(133, 379))  
+    //create enemy
+    //instance_create(randX, room_height+40, o_enemy);
+    instance_create(randX, 4, o_enemy)
+    //call it again
+    alarm[0] = 50
+}
+if (global.wave == 2)
+{
+    instance_create(100, 30, o_enemy)
+    alarm[0] = 50
+}
+if (global.wave == 3)
+{
+    instance_create(410, 30, o_enemy)
+    alarm[0] = 50
+}
+    
 </string>
           </argument>
         </arguments>

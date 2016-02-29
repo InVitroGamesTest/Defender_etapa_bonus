@@ -106,6 +106,7 @@ y = creador.y;
             <kind>1</kind>
             <string>with (other)
     {
+     global.energy -= 6
      instance_destroy();
     }
 </string>
@@ -132,6 +133,7 @@ y = creador.y;
             <kind>1</kind>
             <string>with (other)
     {
+     global.energy -= 5
      instance_destroy();
     }
 </string>
@@ -158,9 +160,10 @@ y = creador.y;
             <kind>1</kind>
             <string>with (other)
     {
+     global.energy -= 7
      instance_destroy()
     }
-instance_destroy()
+//instance_destroy()
 </string>
           </argument>
         </arguments>

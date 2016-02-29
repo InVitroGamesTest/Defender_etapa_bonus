@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Init Wave
-global.wave = 1;
+            <string>/////////////////////////////////Init Wave
+//29/02/2016
+global.wave = 1
 
-//15 seconds until alarm[0] triggers
+//10 seconds until alarm[0] triggers
 alarm[0] = room_speed*10;  
 </string>
           </argument>
@@ -52,22 +53,22 @@ alarm[0] = room_speed*10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Add wave every 15 secs
+            <string>//Add wave every 10 secs
 global.wave ++;
 
 //speed up spawn rate every time wave increases
-
-obj_spawner.spawn_rate-=10;
+//obj_spawner.spawn_rate-=10;
 
 if (global.wave == 5) {
-obj_spawner.spawn_rate+=40;
+instance_create(251,56,obj_mini_boss)
 }
+/*
 if (global.wave == 8) {
 obj_spawner.spawn_rate+=20;
-}
+}*/
 if (global.wave == 10) {
-instance_create(251,56,obj_boss);
-obj_spawner.spawn_rate=0;
+instance_create(251,56,obj_boss)
+//obj_spawner.spawn_rate=0;
 }
 //Call this alarm again
 alarm[0] = room_speed*10;
