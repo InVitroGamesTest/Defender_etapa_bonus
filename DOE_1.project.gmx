@@ -49,6 +49,7 @@
     <object>objects\obj_boss_bullet</object>
     <object>objects\obj_mini_boss</object>
     <object>objects\BLACK</object>
+    <object>objects\obj_MANAGER</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_defender</room>

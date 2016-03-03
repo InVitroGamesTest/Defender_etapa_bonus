@@ -48,7 +48,7 @@ if(x&gt;center){hDirection = -1;}
 if (global.wave == 1) {
 //Set speed
 
-MoveType = 1;
+MoveType = 2;
 }
 if (global.wave == 2) {
 
@@ -147,8 +147,8 @@ if(place_meeting(x,y,obj_player)){
     alarm[0] = 5;*/   
 }
 // Enemy shoot
-
-if random(70)&lt;1 {
+randomize();
+if random(100)&lt;2 {
     bala = instance_create(x,y,obj_bullet_enemy);
     bala.creador2 = id;
     audio_play_sound(snd_enemy, 1, false);

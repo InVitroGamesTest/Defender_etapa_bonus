@@ -504,7 +504,7 @@ if(FireMode==5){
             <kind>1</kind>
             <string>///movimiento
 
-spd = 1.3;
+spd = 2;
 
 if(x &lt; 120){dirMove = 1;}
 

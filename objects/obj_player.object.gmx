@@ -127,7 +127,7 @@ dKey = keyboard_check(ord('S')) || (gamepad_axis_value(0,gp_axislv) &gt; 0)
 lKey = keyboard_check(ord('A')) || (gamepad_axis_value(0,gp_axislh) &lt; 0)
 rKey = keyboard_check(ord('D')) || (gamepad_axis_value(0,gp_axislh) &gt; 0)
 shootKey = keyboard_check(ord('U')) || (gamepad_button_check(0,gp_shoulderrb))
-shieldKey = gamepad_button_check(0,gp_shoulderlb)
+shieldKey =  keyboard_check(ord('Y')) || (gamepad_button_check(0,gp_shoulderlb))
 //shieldKey = gamepad_button_check_pressed(0,gp_shoulderlb)&amp;&amp; gamepad_button_check_pressed(0,gp_shoulderrb)
 releasedKey = gamepad_button_check_released(0,gp_shoulderlb)|| gamepad_button_check_released(0,gp_shoulderrb)
 //shieldKey = keyboard_check_pressed(ord('J')) || ((gamepad_button_check_pressed(0,gp_shoulderlb))&amp;&amp; (gamepad_button_check_pressed(0,gp_shoulderrb)));
@@ -265,7 +265,7 @@ if (health &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>health -= 10;
+            <string>health -= 8;
 with (other)
     {
      instance_destroy();
@@ -292,7 +292,7 @@ with (other)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>health -= 10;
+            <string>health -= 5;
 with (other)
     {
      instance_destroy();
