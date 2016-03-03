@@ -30,7 +30,7 @@
     //probar orientación
     //direction = -90;
     image_angle = direction;
-    
+    dirMove = 1;
     TargetToShoot = obj_player;
     
     BulletsAmount = 10;
@@ -482,6 +482,36 @@ if(FireMode==5){
         }
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///movimiento
+
+spd = 1.3;
+
+if(x &lt; 120){dirMove = 1;}
+
+if(x &gt; 380){dirMove = -1;}
+
+x += spd * dirMove;
+
 </string>
           </argument>
         </arguments>

@@ -23,6 +23,7 @@
     <sprite>sprites\spr_shield</sprite>
     <sprite>sprites\spr_boss_bullet</sprite>
     <sprite>sprites\spr_mini_boss</sprite>
+    <sprite>sprites\black_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -47,6 +48,7 @@
     <object>objects\obj_shield</object>
     <object>objects\obj_boss_bullet</object>
     <object>objects\obj_mini_boss</object>
+    <object>objects\BLACK</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_defender</room>

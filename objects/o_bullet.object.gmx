@@ -53,6 +53,7 @@
     global.mini_boss_1-= 1
     if global.mini_boss_1&lt;=1 
     {
+    obj_spawner.alarm[0] = 50;
     instance_destroy()
     score += 50
     }
